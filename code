@@ -1,0 +1,32 @@
+def encrypt(code, offset):
+    if(ord(code) > 122):
+        return (chr) (ord(code) + offset - 26)
+    else:
+        return (chr) (ord(code) + offset)
+
+def charInString(word, offset):
+    var = ""
+
+    for i in word:
+        var += encrypt(i, offset)
+
+    return var
+
+def deencrypt(code, offset):
+    if(ord(code) > 122):
+        return (chr) (ord(code) - offset - 26)
+    else:
+        return (chr) (ord(code) - offset)
+
+def entschluesseln(code, offset):
+    var = ""
+
+    for i in code:
+        var += deencrypt(i, offset)
+    
+    return var
+
+
+
+print(entschluesseln("cde", 2))
+#print(charInString("abc", 2))
